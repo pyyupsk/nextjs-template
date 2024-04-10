@@ -1,10 +1,10 @@
-import type { Config } from 'tailwindcss'
-import { fontFamily } from 'tailwindcss/defaultTheme'
-import { addDynamicIconSelectors } from '@iconify/tailwind'
-import svgToDataUri from 'mini-svg-data-uri'
+import { addDynamicIconSelectors } from '@iconify/tailwind';
+import svgToDataUri from 'mini-svg-data-uri';
+import type { Config } from 'tailwindcss';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
+const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette');
 
 const config = {
     darkMode: ['class'],
@@ -89,24 +89,24 @@ const config = {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     'bg-dot-thick': (value: any) => ({
                         backgroundImage: `url("${svgToDataUri(
-                            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`
+                            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`,
                         )}")`,
                     }),
                 },
-                { values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
-            )
+                { values: flattenColorPalette(theme('backgroundColor')), type: 'color' },
+            );
         },
     ],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function addVariablesForColors({ addBase, theme }: any) {
-    let allColors = flattenColorPalette(theme('colors'))
-    let newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]))
+    const allColors = flattenColorPalette(theme('colors'));
+    const newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]));
 
     addBase({
         ':root': newVars,
-    })
+    });
 }

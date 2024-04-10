@@ -1,8 +1,9 @@
 {
-    "semi": false,
-    "trailingComma": "es5",
+    "$schema": "https://json.schemastore.org/prettierrc",
+    "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-pkg", "@ianvs/prettier-plugin-sort-imports"],
     "singleQuote": true,
+    "semi": true,
+    "trailingComma": "all",
     "tabWidth": 4,
-    "useTabs": false,
     "printWidth": 120
 }

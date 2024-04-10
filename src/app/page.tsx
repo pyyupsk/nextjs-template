@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import { Highlight } from '@/components/ui/hero-highlight'
-import { Card } from '@/components/card'
+import { Card } from '@/components/card';
+import { Highlight } from '@/components/ui/hero-highlight';
+import Image from 'next/image';
 
 export default function Home() {
     return (
@@ -67,5 +67,5 @@ export default function Home() {
                 />
             </div>
         </main>
-    )
+    );
 }
