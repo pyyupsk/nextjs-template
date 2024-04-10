@@ -1,0 +1,7 @@
+{
+    "$schema": "https://unpkg.com/knip@5/schema.json",
+    "entry": ["src/index.{js,ts,jsx,tsx}", "src/**/index.{js,ts,jsx,tsx}"],
+    "project": ["src/**/*.{js,ts,jsx,tsx,mdx}"],
+    "ignoreDependencies": ["husky", "@iconify/json"],
+    "ignoreBinaries": ["validate-branch-name"]
+}
