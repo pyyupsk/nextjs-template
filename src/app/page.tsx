@@ -8,12 +8,12 @@ export default function Home() {
             <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
                 <a
                     className="fixed left-0 top-0 flex gap-2 p-8 lg:static lg:p-0 text-center justify-center"
-                    href="https://github.com/Zylo23/nextjs-template"
+                    href="https://github.com/pyyupsk/nextjs-template"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     <span className="icon-[mdi--github] size-6" />
-                    <span className="text-md font-semibold">Zylo23/nextjs-template</span>
+                    <span className="text-md font-semibold">pyyupsk/nextjs-template</span>
                 </a>
 
                 <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">

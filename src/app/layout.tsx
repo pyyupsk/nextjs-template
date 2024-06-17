@@ -9,7 +9,7 @@ const fontSans = FontSans({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
     title: 'Next.js Template',
-    description: 'Next.js template by @Zylo23',
+    description: 'Next.js template by @pyyupsk',
 };
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {

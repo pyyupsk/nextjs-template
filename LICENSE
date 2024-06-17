@@ -1,6 +1,6 @@
 (The MIT License)
 
-Copyright (c) 2024 Zylo23 <pyyupsk@proton.me>
+Copyright (c) 2024 pyyupsk <pyyupsk@proton.me>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

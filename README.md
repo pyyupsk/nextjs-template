@@ -1,6 +1,6 @@
 # Next.js TypeScript Tailwind CSS Template
 
-![Next.js TypeScript Tailwind CSS Template](https://raw.githubusercontent.com/Zylo23/nextjs-template/main/.github/assets/preview.png)
+![Next.js TypeScript Tailwind CSS Template](https://raw.githubusercontent.com/pyyupsk/nextjs-template/main/.github/assets/preview.png)
 
 This is a template project using Next.js with TypeScript, Tailwind CSS, ESLint, Prettier, Husky, Lint-staged, Knip, Next-themes for dark mode, and Framer-motion for animations.
 
@@ -35,7 +35,7 @@ This is a template project using Next.js with TypeScript, Tailwind CSS, ESLint, 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/Zylo23/nextjs-template.git
+git clone https://github.com/pyyupsk/nextjs-template.git
 ```
 
 2. Navigate to the project directory
@@ -52,10 +52,10 @@ npm install
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 Feel free to use this template for your Next.js projects!
 
 ---
 
-This project was created with ❤️ by [Zylo23](https://github.com/Zylo23)
+This project was created with ❤️ by [ファース](https://github.com/pyyupsk)
