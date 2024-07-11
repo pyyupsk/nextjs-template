@@ -1,16 +1,8 @@
 {
-    "plugins": ["@typescript-eslint/eslint-plugin", "prettier"],
-    "extends": [
-        "next/core-web-vitals",
-        "prettier",
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended"
-    ],
+    "plugins": ["prettier"],
+    "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:prettier/recommended"],
     "rules": {
         "no-unused-vars": "warn",
         "prettier/prettier": "error"
-    },
-    "ignorePatterns": ["src/components/ui"]
+    }
 }

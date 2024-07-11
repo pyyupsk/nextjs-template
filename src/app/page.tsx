@@ -1,18 +1,19 @@
 import { Card } from '@/components/card';
+import { MdiGithub } from '@/components/icons/MdiGithub';
 import { Highlight } from '@/components/ui/hero-highlight';
 import Image from 'next/image';
 
 export default function Home() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
+            <div className="max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
                 <a
                     className="fixed left-0 top-0 flex gap-2 p-8 lg:static lg:p-0 text-center justify-center"
                     href="https://github.com/pyyupsk/nextjs-template"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <span className="icon-[mdi--github] size-6" />
+                    <MdiGithub className="w-6 h-6" />
                     <span className="text-md font-semibold">pyyupsk/nextjs-template</span>
                 </a>
 
@@ -61,9 +62,9 @@ export default function Home() {
                     link="https://ui.aceternity.com/"
                 />
                 <Card
-                    title="Iconify"
-                    description="A single source for over 100,000 icons from multiple providers."
-                    link="https://iconify.design/"
+                    title="Framer Motion"
+                    description="An animation library for React and Next.js."
+                    link="https://www.framer.com/motion/"
                 />
             </div>
         </main>

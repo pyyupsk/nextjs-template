@@ -19,14 +19,16 @@ This is a template project using Next.js with TypeScript, Tailwind CSS, ESLint, 
 
 ## Available Scripts
 
--   `dev`: Start the development server
 -   `build`: Build the project
--   `start`: Start the production server
--   `lint`: Lint the project
+-   `dev`: Start the development server
 -   `format`: Check the formatting of the project
 -   `format:fix`: Fix the formatting of the project
 -   `knip`: Check unused dependencies
 -   `knip:fix`: Fix unused dependencies
+-   `lint`: Lint the project
+-   `prepare`: Install husky hooks
+-   `serve`: Start the production (static) server
+-   `start`: Start the production server
 
 ## Getting Started
 

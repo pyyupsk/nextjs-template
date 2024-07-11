@@ -74,4 +74,9 @@
     body {
         @apply bg-background text-foreground;
     }
+
+    /* set all elements in main z-10 */
+    main * {
+        @apply z-10;
+    }
 }

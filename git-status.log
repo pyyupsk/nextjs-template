@@ -1,0 +1,327 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   .eslintrc.json
+	deleted:    .husky/pre-push
+	modified:   .lintstagedrc.json
+	modified:   README.md
+	modified:   knip.json
+	modified:   package.json
+	modified:   src/app/layout.tsx
+	modified:   src/app/page.tsx
+	new file:   src/components/icons/MdiGithub.tsx
+	modified:   src/styles/globals.css
+	modified:   tailwind.config.ts
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   pnpm-lock.yaml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	git-status.log
+
+diff --git a/.eslintrc.json b/.eslintrc.json
+index 1756613..0676f25 100644
+--- a/.eslintrc.json
++++ b/.eslintrc.json
+@@ -1,16 +1,8 @@
+ {
+-    "plugins": ["@typescript-eslint/eslint-plugin", "prettier"],
+-    "extends": [
+-        "next/core-web-vitals",
+-        "prettier",
+-        "eslint:recommended",
+-        "plugin:@typescript-eslint/recommended",
+-        "plugin:@typescript-eslint/recommended",
+-        "plugin:prettier/recommended"
+-    ],
++    "plugins": ["prettier"],
++    "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:prettier/recommended"],
+     "rules": {
+         "no-unused-vars": "warn",
+         "prettier/prettier": "error"
+-    },
+-    "ignorePatterns": ["src/components/ui"]
++    }
+ }
+diff --git a/.husky/pre-push b/.husky/pre-push
+deleted file mode 100644
+index c1f9973..0000000
+--- a/.husky/pre-push
++++ /dev/null
+@@ -1 +0,0 @@
+-pnpm validate-branch-name
+\ No newline at end of file
+diff --git a/.lintstagedrc.json b/.lintstagedrc.json
+index 4469c4c..4e82426 100644
+--- a/.lintstagedrc.json
++++ b/.lintstagedrc.json
+@@ -1,5 +1,4 @@
+ {
+-    "**/*.(ts|tsx)": "pnpm tsc --noEmit",
+-    "**/*.(ts|tsx|js)": ["pnpm eslint --fix", "pnpm prettier --write"],
++    "**/*.(ts|tsx|js|jsx)": ["pnpm eslint --fix", "pnpm prettier --write"],
+     "**/*.(md|json)": "pnpm prettier --write"
+ }
+diff --git a/README.md b/README.md
+index a55d214..818f12e 100644
+--- a/README.md
++++ b/README.md
+@@ -19,14 +19,16 @@ This is a template project using Next.js with TypeScript, Tailwind CSS, ESLint,
+ 
+ ## Available Scripts
+ 
+--   `dev`: Start the development server
+ -   `build`: Build the project
+--   `start`: Start the production server
+--   `lint`: Lint the project
++-   `dev`: Start the development server
+ -   `format`: Check the formatting of the project
+ -   `format:fix`: Fix the formatting of the project
+ -   `knip`: Check unused dependencies
+ -   `knip:fix`: Fix unused dependencies
++-   `lint`: Lint the project
++-   `prepare`: Install husky hooks
++-   `serve`: Start the production (static) server
++-   `start`: Start the production server
+ 
+ ## Getting Started
+ 
+diff --git a/knip.json b/knip.json
+index 41e41c1..53d450a 100644
+--- a/knip.json
++++ b/knip.json
+@@ -1,7 +1,6 @@
+ {
+     "$schema": "https://unpkg.com/knip@5/schema.json",
+     "entry": ["src/index.{js,ts,jsx,tsx}", "src/**/index.{js,ts,jsx,tsx}"],
+-    "project": ["src/**/*.{js,ts,jsx,tsx,mdx}"],
+-    "ignoreDependencies": ["husky", "@iconify/json"],
+-    "ignoreBinaries": ["validate-branch-name"]
++    "project": ["src/**/*.{js,ts,jsx,tsx,mdx}"]
++    // "ignoreDependencies": ["husky", "@iconify/json"]
+ }
+diff --git a/package.json b/package.json
+index 44ce9dc..aac5077 100644
+--- a/package.json
++++ b/package.json
+@@ -4,46 +4,45 @@
+     "private": true,
+     "scripts": {
+         "build": "next build",
+-        "dev": "next dev",
++        "dev": "next --turbo",
+         "format": "prettier --check .",
+         "format:fix": "prettier --write --list-different .",
+         "knip": "knip",
+         "knip:fix": "knip --fix",
+         "lint": "next lint",
++        "prepare": "husky",
++        "serve": "serve out",
+         "start": "next start"
+     },
+     "dependencies": {
+-        "clsx": "^2.1.0",
+-        "framer-motion": "^11.0.26",
+-        "mini-svg-data-uri": "^1.4.4",
+-        "next": "14.1.4",
++        "clsx": "^2.1.1",
++        "framer-motion": "^11.3.0",
++        "next": "14.2.5",
+         "next-themes": "^0.3.0",
+-        "react": "^18.2.0",
+-        "react-dom": "^18.2.0",
+-        "tailwind-merge": "^2.2.2",
++        "react": "^18.3.1",
++        "react-dom": "^18.3.1",
++        "tailwind-merge": "^2.4.0",
+         "tailwindcss-animate": "^1.0.7"
+     },
+     "devDependencies": {
+-        "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
+-        "@iconify/json": "^2.2.199",
+-        "@iconify/tailwind": "^0.1.4",
+-        "@types/node": "^20.12.7",
+-        "@types/react": "^18.2.75",
+-        "@types/react-dom": "^18.2.24",
+-        "@typescript-eslint/eslint-plugin": "^6.21.0",
++        "@ianvs/prettier-plugin-sort-imports": "^4.3.0",
++        "@types/node": "^20.14.10",
++        "@types/react": "^18.3.3",
++        "@types/react-dom": "^18.3.0",
+         "autoprefixer": "^10.4.19",
+         "eslint": "^8.57.0",
+-        "eslint-config-next": "14.1.4",
++        "eslint-config-next": "14.2.5",
+         "eslint-config-prettier": "^9.1.0",
+         "eslint-plugin-prettier": "^5.1.3",
+-        "husky": "^8.0.3",
+-        "knip": "^5.9.3",
+-        "lint-staged": "^15.2.2",
+-        "postcss": "^8.4.38",
+-        "prettier": "^3.2.5",
++        "husky": "^9.0.11",
++        "knip": "^5.25.1",
++        "lint-staged": "^15.2.7",
++        "postcss": "^8.4.39",
++        "prettier": "^3.3.2",
+         "prettier-plugin-pkg": "^0.18.1",
+-        "prettier-plugin-tailwindcss": "^0.5.13",
+-        "tailwindcss": "^3.4.3",
+-        "typescript": "^5.4.4"
++        "prettier-plugin-tailwindcss": "^0.6.5",
++        "serve": "^14.2.3",
++        "tailwindcss": "^3.4.4",
++        "typescript": "^5.4.5"
+     }
+ }
+diff --git a/src/app/layout.tsx b/src/app/layout.tsx
+index d423cfb..197e4af 100644
+--- a/src/app/layout.tsx
++++ b/src/app/layout.tsx
+@@ -4,6 +4,7 @@ import '@/styles/globals.css';
+ import { ThemeProvider } from '@/components/theme-provider';
+ import { BackgroundBeams } from '@/components/ui/background-beams';
+ import { cn } from '@/utils/cn';
++import type { ReactNode } from 'react';
+ 
+ const fontSans = FontSans({ subsets: ['latin'], variable: '--font-sans' });
+ 
+@@ -12,7 +13,7 @@ export const metadata: Metadata = {
+     description: 'Next.js template by @pyyupsk',
+ };
+ 
+-const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
++const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
+     return (
+         <html lang="en" suppressHydrationWarning>
+             <body className={cn('bg-background font-sans antialiased min-h-screen', fontSans.variable)}>
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index d9f7e1a..4624b02 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -1,18 +1,19 @@
+ import { Card } from '@/components/card';
++import { MdiGithub } from '@/components/icons/MdiGithub';
+ import { Highlight } from '@/components/ui/hero-highlight';
+ import Image from 'next/image';
+ 
+ export default function Home() {
+     return (
+         <main className="flex min-h-screen flex-col items-center justify-between p-24">
+-            <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
++            <div className="max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
+                 <a
+                     className="fixed left-0 top-0 flex gap-2 p-8 lg:static lg:p-0 text-center justify-center"
+                     href="https://github.com/pyyupsk/nextjs-template"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                 >
+-                    <span className="icon-[mdi--github] size-6" />
++                    <MdiGithub className="w-6 h-6" />
+                     <span className="text-md font-semibold">pyyupsk/nextjs-template</span>
+                 </a>
+ 
+@@ -61,9 +62,9 @@ export default function Home() {
+                     link="https://ui.aceternity.com/"
+                 />
+                 <Card
+-                    title="Iconify"
+-                    description="A single source for over 100,000 icons from multiple providers."
+-                    link="https://iconify.design/"
++                    title="Framer Motion"
++                    description="An animation library for React and Next.js."
++                    link="https://www.framer.com/motion/"
+                 />
+             </div>
+         </main>
+diff --git a/src/components/icons/MdiGithub.tsx b/src/components/icons/MdiGithub.tsx
+new file mode 100644
+index 0000000..fca2034
+--- /dev/null
++++ b/src/components/icons/MdiGithub.tsx
+@@ -0,0 +1,13 @@
++import React from 'react';
++import type { SVGProps } from 'react';
++
++export function MdiGithub(props: SVGProps<SVGSVGElement>) {
++    return (
++        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}>
++            <path
++                fill="currentColor"
++                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
++            ></path>
++        </svg>
++    );
++}
+diff --git a/src/styles/globals.css b/src/styles/globals.css
+index 52ec4a9..ac4194e 100644
+--- a/src/styles/globals.css
++++ b/src/styles/globals.css
+@@ -74,4 +74,9 @@
+     body {
+         @apply bg-background text-foreground;
+     }
++
++    /* set all elements in main z-10 */
++    main * {
++        @apply z-10;
++    }
+ }
+diff --git a/tailwind.config.ts b/tailwind.config.ts
+index 278a799..c27a19b 100644
+--- a/tailwind.config.ts
++++ b/tailwind.config.ts
+@@ -1,11 +1,6 @@
+-import { addDynamicIconSelectors } from '@iconify/tailwind';
+-import svgToDataUri from 'mini-svg-data-uri';
+ import type { Config } from 'tailwindcss';
+ import { fontFamily } from 'tailwindcss/defaultTheme';
+ 
+-// eslint-disable-next-line @typescript-eslint/no-var-requires
+-const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette');
+-
+ const config = {
+     darkMode: ['class'],
+     content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
+@@ -78,35 +73,7 @@ const config = {
+             },
+         },
+     },
+-    plugins: [
+-        require('tailwindcss-animate'),
+-        addVariablesForColors,
+-        addDynamicIconSelectors(),
+-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+-        function ({ matchUtilities, theme }: any) {
+-            matchUtilities(
+-                {
+-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+-                    'bg-dot-thick': (value: any) => ({
+-                        backgroundImage: `url("${svgToDataUri(
+-                            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`,
+-                        )}")`,
+-                    }),
+-                },
+-                { values: flattenColorPalette(theme('backgroundColor')), type: 'color' },
+-            );
+-        },
+-    ],
++    plugins: [require('tailwindcss-animate')],
+ } satisfies Config;
+ 
+ export default config;
+-
+-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+-function addVariablesForColors({ addBase, theme }: any) {
+-    const allColors = flattenColorPalette(theme('colors'));
+-    const newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]));
+-
+-    addBase({
+-        ':root': newVars,
+-    });
+-}
