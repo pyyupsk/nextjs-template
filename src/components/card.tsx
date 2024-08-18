@@ -1,4 +1,12 @@
-export const Card = ({ title, description, link }: { title: string; description: string; link: string }) => {
+export const Card = ({
+    title,
+    description,
+    link,
+}: {
+    title: string;
+    description: string;
+    link: string;
+}) => {
     return (
         <a
             href={link}
@@ -7,7 +15,7 @@ export const Card = ({ title, description, link }: { title: string; description:
             rel="noopener noreferrer"
         >
             <h2 className={`mb-3 text-2xl font-semibold`}>
-                {title}{' '}
+                {title}{" "}
                 <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                     -&gt;
                 </span>

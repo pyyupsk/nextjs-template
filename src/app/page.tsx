@@ -1,7 +1,7 @@
-import { Card } from '@/components/card';
-import { MdiGithub } from '@/components/icons/MdiGithub';
-import { Highlight } from '@/components/ui/hero-highlight';
-import Image from 'next/image';
+import { Card } from "@/components/card";
+import { MdiGithub } from "@/components/icons/MdiGithub";
+import { Highlight } from "@/components/ui/hero-highlight";
+import Image from "next/image";
 
 export default function Home() {
     return (
@@ -41,8 +41,9 @@ export default function Home() {
                     Next.js <Highlight>Template</Highlight>
                 </h1>
                 <p className="text-center text-lg max-w-[500px] mt-5">
-                    A simple Next.js project with TypeScript, ESLint, Prettier, Husky, and lint-staged configurations.
-                </p>{' '}
+                    A simple Next.js project with TypeScript, ESLint, Prettier, Husky, and
+                    lint-staged configurations.
+                </p>{" "}
             </div>
 
             <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left z-10">

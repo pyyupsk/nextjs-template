@@ -1,9 +1,12 @@
 {
     "$schema": "https://json.schemastore.org/prettierrc",
-    "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-pkg", "@ianvs/prettier-plugin-sort-imports"],
-    "singleQuote": true,
-    "semi": true,
+    "plugins": [
+        "prettier-plugin-tailwindcss",
+        "prettier-plugin-pkg",
+        "@ianvs/prettier-plugin-sort-imports"
+    ],
     "trailingComma": "all",
+    "printWidth": 100,
     "tabWidth": 4,
-    "printWidth": 120
+    "semi": true
 }
