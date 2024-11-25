@@ -10,6 +10,7 @@ const fontMono = FontMono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata: Metadata = {
     description: 'A powerful starter template with Next.js, TypeScript, Tailwind CSS, and more.',
+    icons: [{ rel: 'icon', url: '/favicon.svg' }],
     title: 'Next.js TypeScript Tailwind CSS Template',
 };
 
