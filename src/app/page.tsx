@@ -13,7 +13,7 @@ export default function Page() {
         <div className="flex flex-col min-h-screen bg-background text-foreground">
             <main className="flex-grow flex justify-center container py-40">
                 <motion.div
-                    className="max-w-xl space-y-6"
+                    className="max-w-2xl space-y-6"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
@@ -50,7 +50,7 @@ export default function Page() {
                 </motion.div>
             </main>
 
-            <footer className="p-4 text-center text-sm text-muted-foreground">
+            <footer className="text-center text-sm text-muted-foreground container py-3">
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
