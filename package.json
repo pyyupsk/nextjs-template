@@ -5,14 +5,12 @@
     "packageManager": "pnpm@9.14.2",
     "scripts": {
         "build": "next build",
-        "check": "next lint && tsc --noEmit",
         "dev": "next dev --turbo",
         "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
         "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
         "lint": "next lint",
         "lint:fix": "next lint --fix",
         "prepare": "husky",
-        "preview": "next build && next start",
         "serve": "serve out",
         "start": "next start",
         "typecheck": "tsc --noEmit"
