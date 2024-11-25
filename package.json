@@ -2,23 +2,28 @@
     "name": "nextjs-template",
     "version": "0.1.0",
     "private": true,
-    "packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387",
+    "packageManager": "pnpm@9.14.2",
     "scripts": {
         "build": "next build",
-        "dev": "next --turbo",
-        "format": "prettier --write . --cache",
+        "check": "next lint && tsc --noEmit",
+        "dev": "next dev --turbo",
+        "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+        "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
         "lint": "next lint",
+        "lint:fix": "next lint --fix",
         "prepare": "husky",
+        "preview": "next build && next start",
         "serve": "serve out",
-        "start": "next start"
+        "start": "next start",
+        "typecheck": "tsc --noEmit"
     },
     "dependencies": {
         "clsx": "^2.1.1",
         "framer-motion": "^11.11.17",
-        "next": "14.2.5",
+        "next": "15.0.3",
         "next-themes": "^0.3.0",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
         "tailwind-merge": "^2.5.5",
         "tailwindcss-animate": "^1.0.7"
     },
@@ -45,6 +50,6 @@
         "prettier-plugin-tailwindcss": "^0.6.9",
         "serve": "^14.2.4",
         "tailwindcss": "^3.4.15",
-        "typescript": "~5.4.5"
+        "typescript": "~5.5.4"
     }
 }
