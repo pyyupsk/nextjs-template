@@ -1,0 +1,4 @@
+{
+    "*": "pnpm prettier --write --ignore-unknown",
+    "**/*.(ts|tsx|js|jsx)": "pnpm next lint --fix --file"
+}
