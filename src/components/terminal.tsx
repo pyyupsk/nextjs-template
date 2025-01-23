@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Check, Copy } from 'lucide-react';
+import { Check, Copy, Terminal as TerminalIcon } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
 export interface Command {
@@ -49,40 +49,44 @@ export function Terminal({ className, commands = [] }: TerminalProps) {
     return (
         <div
             className={cn(
-                'overflow-hidden rounded-lg border bg-card text-card-foreground',
+                'overflow-hidden rounded-xl border bg-card text-card-foreground shadow-sm',
                 className,
             )}
         >
-            <div className="flex items-center gap-3 border-b px-4 py-3">
+            <div className="flex items-center justify-between border-b bg-background px-4 py-3">
+                <div className="flex items-center gap-2">
+                    <TerminalIcon className="size-5" />
+                    <span className="text-sm font-medium">Terminal</span>
+                </div>
                 <div className="flex gap-1">
-                    <div className="size-3.5 rounded-full bg-secondary" />
-                    <div className="size-3.5 rounded-full bg-secondary" />
-                    <div className="size-3.5 rounded-full bg-secondary" />
+                    <div className="size-3 rounded-full bg-red-400" />
+                    <div className="size-3 rounded-full bg-yellow-400" />
+                    <div className="size-3 rounded-full bg-green-400" />
                 </div>
             </div>
-            <div className="p-4 font-mono text-sm">
+            <div className="min-h-[350px] p-4 font-mono text-sm">
                 <AnimatePresence initial={false}>
                     {commands.slice(0, currentCommand + 1).map((command, index) => (
                         <motion.div
                             animate={{ opacity: 1, y: 0 }}
-                            className="mt-4 first:mt-0"
+                            className="group"
                             exit={{ opacity: 0, y: -20 }}
                             initial={{ opacity: 0, y: 20 }}
                             key={index}
                             transition={{ duration: 0.3 }}
                         >
                             <div className="flex items-center gap-2">
-                                <span className="text-emerald-400">~</span>
-                                <span>{command.command}</span>
+                                <span className="font-bold text-emerald-500">❯</span>
+                                <span className="grow text-start">{command.command}</span>
                                 <Button
-                                    className="ml-auto size-8 text-muted-foreground hover:text-foreground"
+                                    className="ml-auto"
                                     onClick={() => copyCommand(index, command.command)}
                                     size="icon"
                                     variant="ghost"
                                 >
                                     <Check
                                         className={cn(
-                                            'absolute h-4 w-4 transition',
+                                            'absolute h-4 w-4 text-green-500 transition',
                                             copied === index
                                                 ? 'scale-100 opacity-100'
                                                 : 'scale-0 opacity-0',
@@ -102,7 +106,7 @@ export function Terminal({ className, commands = [] }: TerminalProps) {
                             {showOutput && index === currentCommand && command.output && (
                                 <motion.div
                                     animate={{ opacity: 1 }}
-                                    className="mt-2 whitespace-pre-wrap text-muted-foreground"
+                                    className="mt-2 whitespace-pre-wrap text-start text-muted-foreground"
                                     initial={{ opacity: 0 }}
                                     transition={{ duration: 0.5 }}
                                 >
