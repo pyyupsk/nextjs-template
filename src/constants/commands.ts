@@ -1,4 +1,4 @@
-import { Command } from '@/components/terminal';
+import type { Command } from '@/components/terminal';
 
 export const commands: Command[] = [
     {

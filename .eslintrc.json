@@ -1,62 +1,38 @@
 {
     "root": true,
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": 2024,
-        "sourceType": "module",
-        "project": "./tsconfig.json",
-        "tsconfigRootDir": "./"
-    },
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:tailwindcss/recommended",
-        "plugin:jsx-a11y/recommended",
-        "plugin:perfectionist/recommended-natural-legacy",
         "next/core-web-vitals",
-        "next/typescript"
-    ],
-    "plugins": [
-        "react",
-        "react-hooks",
-        "@typescript-eslint",
-        "tailwindcss",
-        "jsx-a11y",
-        "prettier"
+        "next/typescript",
+        "plugin:tailwindcss/recommended",
+        "plugin:perfectionist/recommended-natural-legacy",
+        "plugin:prettier/recommended"
     ],
     "rules": {
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "argsIgnorePattern": "^_",
+                "ignoreRestSiblings": true
+            }
+        ],
+        "@typescript-eslint/consistent-type-imports": [
+            "warn",
+            {
+                "prefer": "type-imports",
+                "disallowTypeAnnotations": false
+            }
+        ],
         "react/react-in-jsx-scope": "off",
-        "react/prop-types": "off",
-        "react/jsx-uses-react": "off",
-        "react/jsx-uses-vars": "error",
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-empty-interface": "off",
-        "tailwindcss/no-custom-classname": "off",
-        "jsx-a11y/anchor-is-valid": "warn",
-        "jsx-a11y/alt-text": "warn",
-        "jsx-a11y/label-has-associated-control": "warn",
-        "jsx-a11y/no-autofocus": "warn"
+        "tailwindcss/classnames-order": "warn",
+        "prettier/prettier": "error",
+        "no-console": ["warn", { "allow": ["warn", "error"] }]
     },
     "overrides": [
         {
             "files": ["*.ts", "*.tsx"],
             "rules": {
-                "@typescript-eslint/explicit-module-boundary-types": "off",
-                "@typescript-eslint/explicit-function-return-type": "off"
-            }
-        },
-        {
-            "files": ["*.tsx"],
-            "rules": {
-                "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }]
+                "@typescript-eslint/explicit-module-boundary-types": "off"
             }
         }
-    ],
-    "ignorePatterns": ["src/components/ui/**/*"]
+    ]
 }

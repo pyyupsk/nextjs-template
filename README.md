@@ -6,27 +6,27 @@ This is a template project using Next.js with TypeScript, Tailwind CSS, ESLint, 
 
 ## Features
 
--   Next.js - A React framework
--   TypeScript - A typed superset of JavaScript
--   Tailwind CSS - A utility-first CSS framework
--   ESLint - A pluggable linting utility for JavaScript
--   Prettier - An opinionated code formatter
--   Husky - A Git hooks manager
--   Lint-staged - Run linters on staged files
--   Next-themes - A library for adding dark mode to your Next.js projects
--   Framer-motion - A production-ready motion library for React
+- Next.js - A React framework
+- TypeScript - A typed superset of JavaScript
+- Tailwind CSS - A utility-first CSS framework
+- ESLint - A pluggable linting utility for JavaScript
+- Prettier - An opinionated code formatter
+- Husky - A Git hooks manager
+- Lint-staged - Run linters on staged files
+- Next-themes - A library for adding dark mode to your Next.js projects
+- Framer-motion - A production-ready motion library for React
 
 ## Available Scripts
 
--   `build`: Build the project
--   `dev`: Start the development server
--   `format:check`: Check the formatting of the project
--   `format:fix`: Fix the formatting of the project
--   `lint`: Lint the project
--   `lint:fix`: Fix the linting of the project
--   `serve`: Start the production (static) server
--   `start`: Start the production server
--   `typecheck`: Typecheck the project
+- `build`: Build the project
+- `dev`: Start the development server
+- `format:check`: Check the formatting of the project
+- `format:fix`: Fix the formatting of the project
+- `lint`: Lint the project
+- `lint:fix`: Fix the linting of the project
+- `serve`: Start the production (static) server
+- `start`: Start the production server
+- `typecheck`: Typecheck the project
 
 ## Getting Started
 

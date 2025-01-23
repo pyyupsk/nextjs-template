@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-     :root {
+    :root {
         --background: 0 0% 100%;
         --foreground: 208 16.48% 17.84%;
         --muted: 240 6.67% 97.06%;
@@ -52,6 +52,6 @@
         @apply border-border;
     }
     body {
-        @apply min-h-screen bg-background text-foreground font-sans antialiased;
+        @apply min-h-screen bg-background font-sans text-foreground antialiased;
     }
 }
